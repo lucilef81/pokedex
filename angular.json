@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "test-botdesign"
+    }
+  },
+  "defaultProject": "test-botdesign",
+  "cli": {
+    "analytics": false
+  }
 }
