@@ -1,15 +1,18 @@
-<input type="text" placeholder="Search by name...">
-<input type="text" placeholder="Search by number...">
+<input type="text" placeholder="Search by name..."  [(ngModel)]="nameFilter" >
+
+<input type="text" placeholder="Search by number..." [(ngModel)]="idFilter">
+
 <select>
   <option value="type">Select by type</option>
 </select>
 
-<div *ngFor="let pokemon of pokemons">
-  <span>{{ pokemon.name }}</span>
-  <span>{{ pokemon.id }}</span>
-  <img src="{{ pokemon.img }}" alt="">
-  <span *ngFor="let type of pokemon.type">{{ type }}</span>
+<div class="pokemons">
+  <div *ngFor="let pokemon of pokemons | nameFilterPipe: nameFilter | idFilterPipe: idFilter">
+    <span>{{ pokemon.name }}</span>
+    <span>{{ pokemon.id }}</span>
+    <img src="{{ pokemon.img }}" alt="">
+    <span *ngFor="let type of pokemon.type">{{ type }}</span>
+  </div>
 </div>
-
 
 

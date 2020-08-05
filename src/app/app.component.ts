@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   pokemons: any = [];
+  nameFilter = '';
+  idFilter = '';
 
   constructor(private http:HttpClient) {}
 
@@ -18,7 +20,6 @@ export class AppComponent implements OnInit {
     this.http.get('../assets/pokemon.json')
     .subscribe(success => {
       this.pokemons = success;
-      console.log(this.pokemons);
     })
   }
 
