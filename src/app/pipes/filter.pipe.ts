@@ -33,3 +33,19 @@ export class IdFilterPipe implements PipeTransform {
     });
   }
 }
+
+@Pipe({ name: 'typeFilterPipe' })
+export class TypeFilterPipe implements PipeTransform {
+  transform(items: any[], typeFilter: string): any[] {
+    if (!items) {
+      return [];
+    }
+    if (!typeFilter) {
+      return items;
+    }
+
+    return items.filter(it => {
+      return it.type.includes(typeFilter);
+    });
+  }
+}

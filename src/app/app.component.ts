@@ -7,8 +7,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   pokemons: any = [];
-  nameFilter = '';
-  idFilter = '';
+  types: string[] = ['Grass', 'Poison', 'Fire', 'Flying', 'Water', 'Bug', 'Normal', 'Fighting', 'Rock', 'Steel', 'Ice', 'Ghost', 'Dragon', 'Psychic', 'Ground', 'Electric'];
+  nameFilter: string = '';
+  idFilter: string = '';
+  typeFilter: string= '';
 
   constructor(private http:HttpClient) {}
 

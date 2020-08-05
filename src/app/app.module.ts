@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { NameFilterPipe, IdFilterPipe } from './pipes/filter.pipe';
+import { NameFilterPipe, IdFilterPipe, TypeFilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NameFilterPipe,
-    IdFilterPipe
+    IdFilterPipe,
+    TypeFilterPipe
   ],
   imports: [
     BrowserModule,

@@ -2,12 +2,13 @@
 
 <input type="text" placeholder="Search by number..." [(ngModel)]="idFilter">
 
-<select>
-  <option value="type">Select by type</option>
+<select [(ngModel)]="typeFilter" >
+  <option value="">Select a type</option>
+  <option *ngFor="let type of types" value="{{ type }}">{{ type }}</option>
 </select>
 
 <div class="pokemons">
-  <div *ngFor="let pokemon of pokemons | nameFilterPipe: nameFilter | idFilterPipe: idFilter">
+  <div *ngFor="let pokemon of pokemons | nameFilterPipe: nameFilter | idFilterPipe: idFilter | typeFilterPipe: typeFilter" >
     <span>{{ pokemon.name }}</span>
     <span>{{ pokemon.id }}</span>
     <img src="{{ pokemon.img }}" alt="">
