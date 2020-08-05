@@ -8,11 +8,15 @@
 </select>
 
 <div class="pokemons">
-  <div *ngFor="let pokemon of pokemons | nameFilterPipe: nameFilter | idFilterPipe: idFilter | typeFilterPipe: typeFilter" >
-    <span>{{ pokemon.name }}</span>
-    <span>{{ pokemon.id }}</span>
-    <img src="{{ pokemon.img }}" alt="">
-    <span *ngFor="let type of pokemon.type">{{ type }}</span>
+  <div class="pokemon" *ngFor="let pokemon of pokemons | nameFilterPipe: nameFilter | idFilterPipe: idFilter | typeFilterPipe: typeFilter" >
+    <div class="image">
+      <img src="{{ pokemon.img }}" alt="">
+    </div>
+    <div class="infos">
+      <strong>{{ pokemon.name }}</strong>
+      <p>{{ pokemon.id }}</p>
+      <span class="type" *ngFor="let type of pokemon.type">{{ type }}</span>
+    </div>
   </div>
 </div>
 
