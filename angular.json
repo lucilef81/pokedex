@@ -123,6 +123,7 @@
   },
   "defaultProject": "test-botdesign",
   "cli": {
+    "defaultCollection": "@nativescript/schematics",
     "analytics": false
   }
 }

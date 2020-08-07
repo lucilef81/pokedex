@@ -1,23 +1,2 @@
-<input type="text" placeholder="Search by name..."  [(ngModel)]="nameFilter" >
-
-<input type="text" placeholder="Search by number..." [(ngModel)]="idFilter">
-
-<select [(ngModel)]="typeFilter" >
-  <option value="">Select a type</option>
-  <option *ngFor="let type of types" value="{{ type }}">{{ type }}</option>
-</select>
-
-<div class="pokemons">
-  <div class="pokemon" *ngFor="let pokemon of pokemons | nameFilterPipe: nameFilter | idFilterPipe: idFilter | typeFilterPipe: typeFilter" >
-    <div class="image">
-      <img src="{{ pokemon.img }}" alt="">
-    </div>
-    <div class="infos">
-      <strong>{{ pokemon.name }}</strong>
-      <p>{{ pokemon.id }}</p>
-      <span class="type" *ngFor="let type of pokemon.type">{{ type }}</span>
-    </div>
-  </div>
-</div>
-
-
+<!-- This will contain any angular routes you setup -->
+<page-router-outlet></page-router-outlet>
